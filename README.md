@@ -10,7 +10,7 @@ I turned our 30-page PDF handbook into a booklet-style website that new members 
 - **Reading progress:** a thin progress bar in the sidebar, and the current chapter is highlighted in the contents.
 - **Interactive checklists:** workshop and tabling checklists with progress bars. Checked items are saved in the visitor's browser.
 - **One place for links:** every form and social link is defined once in a `LINKS` object at the bottom of `index.html`. An empty value hides that link everywhere.
-- **Responsive:** on phones the sidebar becomes a top bar and pages stack vertically.
+- **Mobile:** a compact top bar with a menu, and pages still turn sideways with a swipe.
 - **No build step:** a single HTML file with inline CSS and JavaScript, set in Pretendard.
 
 ## Run locally
