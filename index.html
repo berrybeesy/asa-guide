@@ -205,8 +205,65 @@
 
   [hidden]{display:none!important}
 
+
+  /* org chart (Getting Started) */
+  .op{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:999px;padding:12px 18px;font-size:13.5px;font-weight:600;line-height:1.25}
+  .op-grey{background:#EDEDED;color:#222}
+  .op-pink{background:#F8DEDB;color:#8B1A12}
+  .op-yellow{background:#F8EFC4;color:#6B5A12}
+  .op-purple{background:#E1E1F8;color:#2E2F8A}
+  .op-blue{background:#DCEFF4;color:#1F5B66}
+  .org-eb{display:flex;gap:10px;padding:10px;border:1.5px solid #D9D9D9;border-radius:999px}
+  .org-eb .op{flex:1 1 auto;padding:11px 12px;font-size:12.5px}
+  .org-link{display:flex;flex-direction:column;align-items:center;font-size:12.5px;color:var(--muted);gap:3px;margin:4px 0}
+  .org-link i{width:1.5px;height:12px;background:#777}
+  .org-leads{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:10px 12px 12px;border:1.5px solid #D9D9D9;border-radius:32px}
+  .org-leads>div{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .org-leads .op{width:100%;height:56px}
+  .org-leads small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .org-teams{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .org-teams>div{display:flex;flex-direction:column}
+  .org-teams .team{flex:1}
+  .org-link.sm{margin:2px 0}
+  .team{border-radius:12px;padding:16px 18px;border:1.5px solid}
+  .team h4{margin:0 0 6px}
+  .team p{margin:0;font-size:13.5px;line-height:1.5}
+  .t-pink{background:#F8DEDB;border-color:#E9A9A2;color:#8B1A12}
+  .t-yellow{background:#F8EFC4;border-color:#E6D48A;color:#6B5A12}
+  .t-purple{background:#E1E1F8;border-color:#B6B6EC;color:#2E2F8A}
+  .t-blue{background:#DCEFF4;border-color:#A9D6E2;color:#1F5B66}
+  .page .label{margin-bottom:8px}
+
+  /* member onboarding */
+  .onb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+  .bignum{counter-reset:b;list-style:none;margin:0;padding:0;display:grid;gap:26px}
+  .bignum li{counter-increment:b;position:relative;padding-left:58px}
+  .bignum li::before{content:counter(b);position:absolute;left:0;top:-4px;font-size:34px;font-weight:800;color:var(--red);line-height:1}
+  .bignum h4{font-size:19px;margin-bottom:6px}
+  .bignum p{margin:0;color:var(--ink-2)}
+  .venn{display:flex;justify-content:center}
+  .venn .c{width:128px;height:128px;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:700;font-size:14px;line-height:1.2;color:#111;mix-blend-mode:multiply;flex:none}
+  .venn .c + .c{margin-left:-24px}
+  .venn .c1{background:#F2B6AA}.venn .c2{background:#C7C7F3}.venn .c3{background:#F8E39A}.venn .c4{background:#B4E0EE}
+
+  /* executive board meetings */
+  .ebm{display:grid;grid-template-columns:270px 160px minmax(0,1fr);gap:0 24px;align-items:center}
+  .ebm-who{margin:0;font-size:22px;font-weight:700;line-height:1.3}
+  .ebm-who span{color:var(--muted)}
+  .ebm-who b{color:var(--red)}
+  .ebm-lines{width:160px;height:420px;display:block}
+  .ebm-list{list-style:none;margin:0;padding:0;height:420px;display:grid;grid-template-rows:1fr 1fr 1fr}
+  .ebm-list li{display:flex;flex-direction:column}
+  .ebm-list li:nth-child(1){justify-content:flex-start;padding-top:6px}
+  .ebm-list li:nth-child(2){justify-content:center;transform:translateY(14px)}
+  .ebm-list li:nth-child(3){justify-content:flex-end;padding-bottom:0}
+  .ebm-list h4{font-size:20px;margin:0 0 6px}
+  .ebm-list h4 b{color:var(--red)}
+  .ebm-list p{margin:0;color:var(--muted);max-width:60ch}
+
   /* ---------- Medium screens ---------- */
   @media (max-width:1180px){
+    .org-eb{flex-wrap:wrap;border-radius:28px}
     .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
     .pills{grid-template-columns:repeat(3,minmax(0,1fr))}
     .link-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -238,6 +295,17 @@
     .opener{padding-top:56px}
     .opener .page-body{padding-bottom:48px}
     .pager{display:none}
+    .org-eb{flex-wrap:wrap;border-radius:24px}
+    .org-eb .op{flex:1 1 40%}
+    .org-leads,.org-teams{grid-template-columns:1fr 1fr}
+    .onb{grid-template-columns:1fr}
+    .venn .c{width:86px;height:86px;font-size:11px}
+    .venn .c + .c{margin-left:-16px}
+    .ebm{grid-template-columns:1fr}
+    .ebm-lines{display:none}
+    .ebm-who{margin-bottom:20px}
+    .ebm-list{height:auto;gap:20px;grid-template-rows:none}
+    .ebm-list li:nth-child(n){transform:none;padding:0}
     .g2,.g3,.g4{grid-template-columns:1fr}
     .pills{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contents button{grid-template-columns:48px 1fr;row-gap:2px}
@@ -375,40 +443,62 @@
       <article class="page" data-ch="1">
         <div class="page-body">
           <div class="head"><span class="kicker">Getting Started</span><h3>Team Organization</h3></div>
-          <p class="label">Executive Board · weekly meeting</p>
-          <div class="pills">
-            <div class="pill">President</div><div class="pill">VP</div><div class="pill">Social Media Director</div><div class="pill">Community Director</div><div class="pill">Creative Director (Design)</div><div class="pill">Creative Director (Video)</div>
+          <p class="label">Executive Board</p>
+          <div class="org-eb">
+            <span class="op op-grey">President&nbsp;·&nbsp;1</span>
+            <span class="op op-grey">VP&nbsp;·&nbsp;1</span>
+            <span class="op op-pink">Social Media Director&nbsp;·&nbsp;1</span>
+            <span class="op op-yellow">Community Director&nbsp;·&nbsp;1</span>
+            <span class="op op-purple">Creative Director (Design)&nbsp;·&nbsp;1</span>
+            <span class="op op-blue">Creative Director (Video)&nbsp;·&nbsp;1</span>
           </div>
-          <p class="label" style="margin-top:28px">Teams · each led by a director · 2 meetings a week</p>
-          <div class="grid g4">
-            <div class="card"><h4>Marketing Team</h4><p class="muted">Develop strategies to grow our audience and promote club activities.</p><span class="meet">Lead: Marketing / Social Media Director</span></div>
-            <div class="card"><h4>Community / Workshop Team</h4><p class="muted">Plan community events, manage event check-ins, and handle setup and cleanup.</p><span class="meet">Lead: Community Director</span></div>
-            <div class="card"><h4>Design Team</h4><p class="muted">Create promotional graphics, workshop materials, and branding.</p><span class="meet">Lead: Creative Director (Design)</span></div>
-            <div class="card"><h4>Video Team</h4><p class="muted">Film and edit videos, create Reels, and document club events.</p><span class="meet">Lead: Creative Director (Video)</span></div>
+          <div class="org-link"><i></i><span>EB Weekly Meeting 1/wk</span><i></i></div>
+          <p class="label">Team Lead</p>
+          <div class="org-leads">
+            <div><span class="op op-pink">Marketing / Social Media Director&nbsp;·&nbsp;1</span><small>Team Lead</small></div>
+            <div><span class="op op-yellow">Community Director&nbsp;·&nbsp;1</span><small>Team Lead</small></div>
+            <div><span class="op op-purple">Creative Director (Design)&nbsp;·&nbsp;1</span><small>Team Lead</small></div>
+            <div><span class="op op-blue">Creative Director (Video)&nbsp;·&nbsp;1</span><small>Team Lead</small></div>
+          </div>
+          <div class="org-teams">
+            <div><div class="org-link sm"><i></i><span>Team Meeting 2/wk</span><i></i></div><div class="team t-pink"><h4>Marketing Team</h4><p>Develop strategies to grow our audience and promote club activities.</p></div></div>
+            <div><div class="org-link sm"><i></i><span>Team Meeting 2/wk</span><i></i></div><div class="team t-yellow"><h4>Community / Workshop Team</h4><p>Plan community events, manage event check-ins, and handle setup and cleanup.</p></div></div>
+            <div><div class="org-link sm"><i></i><span>Team Meeting 2/wk</span><i></i></div><div class="team t-purple"><h4>Design Team</h4><p>Create promotional graphics, workshop materials, and branding.</p></div></div>
+            <div><div class="org-link sm"><i></i><span>Team Meeting 2/wk</span><i></i></div><div class="team t-blue"><h4>Video Team</h4><p>Film and edit videos, create Reels, and document club events.</p></div></div>
           </div>
         </div>
       </article>
 
       <article class="page" data-ch="1">
         <div class="page-body">
-          <div class="grid g2" style="gap:48px">
-            <div>
-              <div class="head"><span class="kicker">Getting Started</span><h3>Member Onboarding</h3></div>
-              <ol class="steps">
-                <li><div><h4>Apply &amp; Join</h4><p>Submit the <a class="link" data-link="apply" target="_blank" rel="noopener">application</a> and join our club on <a class="link" data-link="campusConnect" target="_blank" rel="noopener">Campus Connect</a>.</p></div></li>
-                <li><div><h4>Complete Team Interest Form</h4><p>You'll get a welcome email after joining Campus Connect. Then submit the <a class="link" data-link="teamForm" target="_blank" rel="noopener">Team Interest Form</a>.</p></div></li>
-                <li><div><h4>Executive Board (E.B.) Review</h4><p>The E.B. reviews submissions and assigns members based on their interests and team needs.</p></div></li>
-                <li><div><h4>Team Placement</h4><p>Members join their assigned teams (via Teams) and begin contributing to projects.</p></div></li>
-              </ol>
+          <div class="head"><span class="kicker">Getting Started</span><h3>Member Onboarding</h3></div>
+          <div class="onb">
+            <ol class="bignum">
+              <li><h4>Apply &amp; Join</h4><p><a class="link" data-link="apply" target="_blank" rel="noopener">Submit the application</a> on our <a class="link" data-link="website" target="_blank" rel="noopener">ASA website</a> and join our club on <a class="link" data-link="campusConnect" target="_blank" rel="noopener">Campus Connect</a>.</p></li>
+              <li><h4>Complete Team Interest Form</h4><p>You'll receive a welcome email after joining Campus Connect. Then <a class="link" data-link="teamForm" target="_blank" rel="noopener">submit the Team Interest Form</a>.</p></li>
+              <li><h4>Executive Board (E.B.) Review</h4><p>The E.B. reviews submissions and assigns members based on their interests and team needs.</p></li>
+              <li><h4>Team Placement</h4><p>Members join their assigned teams (via Teams) and begin contributing to projects.</p></li>
+            </ol>
+            <div class="venn" aria-label="Four teams: Community, Design, Video, Marketing">
+              <span class="c c1">Community<br>Team</span><span class="c c2">Design<br>Team</span><span class="c c3">Video<br>Team</span><span class="c c4">Marketing<br>Team</span>
             </div>
-            <div>
-              <div class="head"><span class="kicker">For E.B. leaders · 3 types of meetings</span><h3>Executive Board Meetings</h3></div>
-              <ol class="steps">
-                <li><div><h4>Executive Board Meeting</h4><p>Share updates from your team and discuss any challenges, new ideas, or next steps.</p></div></li>
-                <li><div><h4>Biweekly Meeting (the team you lead)</h4><p>Meet with your team members, assign tasks, and check on their progress.</p></div></li>
-                <li><div><h4>Monthly Meeting</h4><p>The club-wide monthly meetup.</p></div></li>
-              </ol>
-            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="page" data-ch="1">
+        <div class="page-body">
+          <div class="head"><span class="kicker">Getting Started</span><h3>Executive Board Meetings</h3></div>
+          <div class="ebm">
+            <p class="ebm-who">Executive Board Leader<br><span>(<b>3</b> types of meetings)</span></p>
+            <svg class="ebm-lines" viewBox="0 0 160 420" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 210 L158 22 M2 210 L158 210 M2 210 L158 398" fill="none" stroke="#111" stroke-width="2" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <ol class="ebm-list">
+              <li><h4><b>1.</b> Executive Board Meeting</h4><p>Share updates from your team and discuss any challenges, new ideas, or next steps.</p></li>
+              <li><h4><b>2.</b> Biweekly Meeting (the team you lead)</h4><p>Meet with your team members, assign tasks, and check on their progress.</p></li>
+              <li><h4><b>3.</b> Monthly Meeting</h4><p>The club-wide monthly meetup.</p></li>
+            </ol>
           </div>
         </div>
       </article>
